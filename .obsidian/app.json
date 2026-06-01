@@ -11,12 +11,13 @@
   "showLineNumber": false,
   "spellcheck": false,
   "useTab": false,
-  "tabSize": 2,
+  "tabSize": 4,
   "newFileLocation": "folder",
-  "newFileFolderPath": "00 - Home",
+  "newFileFolderPath": "03 - Resources",
   "attachmentFolderPath": "00 - Attachments",
   "alwaysUpdateLinks": true,
   "newLinkFormat": "shortest",
   "useMarkdownLinks": false,
-  "showUnsupportedFiles": false
+  "showUnsupportedFiles": false,
+  "mobilePullAction": "quickadd:choice:go-home"
 }

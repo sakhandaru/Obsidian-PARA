@@ -77,16 +77,16 @@ module.exports = async (params) => {
     // Gabungkan menjadi string task
     const taskString = `- [ ] ${description.trim()}${due}${selectedPriority}`;
 
-    // 4. Cari dan tulis ke file Tasks.md di bawah ## Active
-    const taskFile = app.vault.getAbstractFileByPath("00 - Home/Tasks.md");
+    // 4. Cari dan tulis ke file Tasks (lepas).md di bawah ## 📥 Task Inbox
+    const taskFile = app.vault.getAbstractFileByPath("00 - Home/Tasks (lepas).md");
     if (!taskFile) {
-        new Notice("File Tasks.md tidak ditemukan di folder 00 - Home!");
+        new Notice("File Tasks (lepas).md tidak ditemukan di folder 00 - Home!");
         return;
     }
 
     try {
         let content = await app.vault.read(taskFile);
-        const activeHeader = "## Active";
+        const activeHeader = "## 📥 Task Inbox";
         const index = content.indexOf(activeHeader);
 
         if (index !== -1) {

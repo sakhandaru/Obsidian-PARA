@@ -1,3 +1,4 @@
+
 ```dataviewjs
 const style = "background-color: var(--background-modifier-border); color: var(--text-normal); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 500; font-size: 0.8em; cursor: pointer; transition: background-color 0.2s ease, transform 0.1s ease; outline: none;";
 
@@ -23,8 +24,8 @@ const createButton = (label, action, activeStyle = "") => {
 
 createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
-createButton("📈 Productivity", () => {
-    const file = app.vault.getAbstractFileByPath("00 - Home/Productivity.md");
+createButton("📈 Overview", () => {
+    const file = app.vault.getAbstractFileByPath("00 - Home/Overview.md");
     if (file) app.workspace.getLeaf().openFile(file);
 });
 ```

@@ -223,6 +223,25 @@
           }
         ]
       }
+    },
+    {
+      "id": "go-home",
+      "name": "🏠 Go Home",
+      "type": "Macro",
+      "command": true,
+      "macro": {
+        "id": "go-home-macro",
+        "name": "Go Home Macro",
+        "commands": [
+          {
+            "id": "go-home-script",
+            "name": "go-home.js",
+            "type": "UserScript",
+            "path": "99 - Templates/scripts/go-home.js",
+            "settings": {}
+          }
+        ]
+      }
     }
   ],
   "inputPrompt": "single-line",

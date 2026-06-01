@@ -136,27 +136,68 @@ module.exports = async (params) => {
     // Gabungkan menjadi string task
     const taskString = `- [ ] ${description.trim()}${due}${selectedPriority}${repeat}`;
 
-    // 5. Tulis ke file proyek terpilih di bawah ## Tasks
+    // 5. Tulis ke file proyek terpilih di Task Source
     try {
         let content = await app.vault.read(selectedFile);
         const tasksHeader = "## Tasks";
-        const index = content.indexOf(tasksHeader);
+        const taskSourceHeader = "> [!note]- Task Source";
+        const taskSourceIntro = "> Task markdown disimpan di sini agar tombol edit dari plugin Tasks tetap bisa bekerja.";
+        const tasksView = [
+            tasksHeader,
+            "",
+            "```tasks",
+            "path includes {{query.file.path}}",
+            "hide backlink",
+            "hide toolbar",
+            "```",
+            "",
+            taskSourceHeader,
+            taskSourceIntro,
+            ">"
+        ].join("\n");
 
-        if (index !== -1) {
-            const insertPosition = content.indexOf('\n', index);
-            if (insertPosition === -1) {
-                content += "\n\n" + taskString;
-            } else {
-                content = content.slice(0, insertPosition + 1) + taskString + "\n" + content.slice(insertPosition + 1);
+        const ensureTaskSource = (text) => {
+            if (text.includes(taskSourceHeader)) return text;
+
+            const tasksIndex = text.indexOf(tasksHeader);
+            if (tasksIndex === -1) {
+                return `${text.trimEnd()}\n\n${tasksView}\n`;
             }
-            await app.vault.modify(selectedFile, content);
-            new Notice(`✅ Tugas berhasil ditambahkan ke proyek [${selectedProjectName}]!`);
-        } else {
-            // Jika tidak ada header ## Tasks, buat baru di akhir file
-            content += `\n\n## Tasks\n${taskString}`;
-            await app.vault.modify(selectedFile, content);
-            new Notice(`✅ Tugas ditambahkan ke akhir proyek [${selectedProjectName}].`);
-        }
+
+            const notesIndex = text.indexOf("\n## Notes", tasksIndex);
+            if (notesIndex === -1) {
+                return `${text.trimEnd()}\n\n${taskSourceHeader}\n${taskSourceIntro}\n>\n`;
+            }
+
+            const beforeTasks = text.slice(0, tasksIndex).trimEnd();
+            const existingTasks = text.slice(tasksIndex + tasksHeader.length, notesIndex).trim();
+            const afterTasks = text.slice(notesIndex);
+            const sourceLines = existingTasks
+                .split("\n")
+                .map(line => line.trimEnd())
+                .filter(line => line.length > 0 && !line.startsWith("```") && !line.startsWith("path includes") && !line.startsWith("hide backlink") && !line.startsWith("hide toolbar"))
+                .map(line => line.startsWith(">") ? line : `> ${line}`);
+            const sourceBlock = sourceLines.length > 0 ? `${tasksView}\n${sourceLines.join("\n")}\n` : `${tasksView}\n`;
+
+            return `${beforeTasks}\n\n${sourceBlock}${afterTasks}`;
+        };
+
+        const insertTask = (text) => {
+            const sourceIndex = text.indexOf(taskSourceHeader);
+            if (sourceIndex === -1) return `${text.trimEnd()}\n> ${taskString}\n`;
+
+            const nextSectionIndex = text.indexOf("\n## ", sourceIndex + taskSourceHeader.length);
+            const insertPosition = nextSectionIndex === -1 ? text.length : nextSectionIndex;
+            const beforeSourceEnd = text.slice(0, insertPosition).trimEnd();
+            const afterSourceEnd = text.slice(insertPosition);
+
+            return `${beforeSourceEnd}\n> ${taskString}\n${afterSourceEnd}`;
+        };
+
+        content = ensureTaskSource(content);
+        content = insertTask(content);
+        await app.vault.modify(selectedFile, content);
+        new Notice(`✅ Tugas berhasil ditambahkan ke proyek [${selectedProjectName}]!`);
     } catch (err) {
         new Notice(`Gagal menulis tugas: ${err.message}`);
     }

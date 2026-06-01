@@ -1,5 +1,4 @@
 [
-  "obsidian-tasks-plugin",
   "templater-obsidian",
   "dataview",
   "obsidian-icon-folder",
@@ -8,7 +7,8 @@
   "actions-uri",
   "terminal",
   "quickadd",
-  "contribution-graph",
   "slash-commander",
-  "auto-note-mover"
+  "auto-note-mover",
+  "contribution-graph",
+  "obsidian-tasks-plugin"
 ]

@@ -23,23 +23,92 @@ enableMainContainerShadow: false
 cellStyleRules: []
 
 ```
+---
+
+
 ```dataviewjs
+const todayStr = moment().format("YYYY-MM-DD");
+
+// 1. Ambil data tugas
 const allTasks = dv.pages('!"99 - Templates"').file.tasks;
-const completed = allTasks.filter(t => t.completed);
-const totalCount = allTasks.length;
-const completedCount = completed.length;
-const percent = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
-dv.paragraph(`
-<div style="
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 12px 0;
-  font-family: var(--font-interface);
-  max-width: 420px;
-">
+// Helper untuk mengambil tanggal tugas secara konsisten
+const getTaskDate = (t) => {
+    const dueMatch = t.text.match(/📅 (\d{4}-\d{2}-\d{2})/);
+    if (dueMatch) return moment(dueMatch[1]);
+    
+    const journalMatch = t.path.match(/04 - Journal\/(\d{4}-\d{2}-\d{2})/);
+    if (journalMatch) return moment(journalMatch[1]);
+    
+    return null;
+};
 
+// Global Stats
+const globalCompleted = allTasks.filter(t => t.completed);
+const globalTotal = allTasks.length;
+const globalCompletedCount = globalCompleted.length;
+const globalPercent = globalTotal > 0 ? Math.round((globalCompletedCount / globalTotal) * 100) : 0;
+
+// Daily Stats
+const todayTasks = allTasks.filter(t => {
+    const date = getTaskDate(t);
+    return date && date.isSame(moment(), 'day');
+});
+const todayCompleted = todayTasks.filter(t => t.completed);
+const todayTotal = todayTasks.length;
+const todayCompletedCount = todayCompleted.length;
+const todayPercent = todayTotal > 0 ? Math.round((todayCompletedCount / todayTotal) * 100) : 0;
+
+// Weekly Stats
+const weekTasks = allTasks.filter(t => {
+    const date = getTaskDate(t);
+    return date && date.isSame(moment(), 'week');
+});
+const weekCompleted = weekTasks.filter(t => t.completed);
+const weekTotal = weekTasks.length;
+const weekCompletedCount = weekCompleted.length;
+const weekPercent = weekTotal > 0 ? Math.round((weekCompletedCount / weekTotal) * 100) : 0;
+
+// Monthly Stats
+const monthTasks = allTasks.filter(t => {
+    const date = getTaskDate(t);
+    return date && date.isSame(moment(), 'month');
+});
+const monthCompleted = monthTasks.filter(t => t.completed);
+const monthTotal = monthTasks.length;
+const monthCompletedCount = monthCompleted.length;
+const monthPercent = monthTotal > 0 ? Math.round((monthCompletedCount / monthTotal) * 100) : 0;
+
+// 2. Render Tabs Container
+const container = dv.el("div", "", {
+    attr: { style: "font-family: var(--font-interface); width: 100%; margin: 12px 0;" }
+});
+
+// Render Tab Buttons Header
+const tabHeader = document.createElement("div");
+tabHeader.style = "display: flex; width: 100%; gap: 6px; border-bottom: 1px solid var(--background-modifier-border); padding-bottom: 8px; margin-bottom: 12px;";
+container.appendChild(tabHeader);
+
+const createTabButton = (label) => {
+    const btn = document.createElement("button");
+    btn.innerText = label;
+    btn.style = "flex: 1; background: none; border: none; padding: 6px 4px; text-align: center; border-radius: 4px; font-weight: 600; font-size: 0.8em; cursor: pointer; color: var(--text-muted); transition: all 0.2s ease; outline: none; white-space: nowrap;";
+    tabHeader.appendChild(btn);
+    return btn;
+};
+
+const tabDailyBtn = createTabButton("📅 Hari Ini");
+const tabWeeklyBtn = createTabButton("🗓️ Minggu Ini");
+const tabMonthlyBtn = createTabButton("🌕 Bulan Ini");
+const tabGlobalBtn = createTabButton("📊 Semua");
+
+// Content Containers
+const contentContainer = document.createElement("div");
+contentContainer.style = "display: flex; flex-direction: column; gap: 8px;";
+container.appendChild(contentContainer);
+
+const renderCards = (completed, total, percent) => {
+    return `
   <div style="
     background-color: var(--background-secondary);
     border: 1px solid var(--background-modifier-border);
@@ -73,7 +142,7 @@ dv.paragraph(`
         font-size: 0.9em;
         font-weight: 600;
         color: var(--text-normal);
-      ">${completedCount}</span>
+      ">${completed}</span>
     </div>
   </div>
 
@@ -110,7 +179,7 @@ dv.paragraph(`
         font-size: 0.9em;
         font-weight: 600;
         color: var(--text-normal);
-      ">${totalCount}</span>
+      ">${total}</span>
     </div>
   </div>
 
@@ -146,13 +215,48 @@ dv.paragraph(`
       <span style="
         font-size: 0.9em;
         font-weight: 600;
-        color: var(--text-normal);
+        color: ${percent === 100 ? '#7ee787' : 'var(--text-normal)'};
       ">${percent}%</span>
     </div>
   </div>
+    `;
+};
 
-</div>
-`);
+// Switch Tab Logic
+const selectTab = (active) => {
+    // Reset all button styles
+    [tabDailyBtn, tabWeeklyBtn, tabMonthlyBtn, tabGlobalBtn].forEach(btn => {
+        btn.style.backgroundColor = "transparent";
+        btn.style.color = "var(--text-muted)";
+    });
+
+    if (active === "daily") {
+        tabDailyBtn.style.backgroundColor = "var(--interactive-accent)";
+        tabDailyBtn.style.color = "var(--text-on-accent)";
+        contentContainer.innerHTML = renderCards(todayCompletedCount, todayTotal, todayPercent);
+    } else if (active === "weekly") {
+        tabWeeklyBtn.style.backgroundColor = "var(--interactive-accent)";
+        tabWeeklyBtn.style.color = "var(--text-on-accent)";
+        contentContainer.innerHTML = renderCards(weekCompletedCount, weekTotal, weekPercent);
+    } else if (active === "monthly") {
+        tabMonthlyBtn.style.backgroundColor = "var(--interactive-accent)";
+        tabMonthlyBtn.style.color = "var(--text-on-accent)";
+        contentContainer.innerHTML = renderCards(monthCompletedCount, monthTotal, monthPercent);
+    } else {
+        tabGlobalBtn.style.backgroundColor = "var(--interactive-accent)";
+        tabGlobalBtn.style.color = "var(--text-on-accent)";
+        contentContainer.innerHTML = renderCards(globalCompletedCount, globalTotal, globalPercent);
+    }
+};
+
+// Event Listeners
+tabDailyBtn.addEventListener("click", () => selectTab("daily"));
+tabWeeklyBtn.addEventListener("click", () => selectTab("weekly"));
+tabMonthlyBtn.addEventListener("click", () => selectTab("monthly"));
+tabGlobalBtn.addEventListener("click", () => selectTab("global"));
+
+// Default Tab
+selectTab("daily");
 ```
 
 ---
@@ -191,8 +295,4 @@ createButton("📔 New Journal", "quickadd:choice:new-journal");
 
 [[Today|⬅️ Today]] | [[Tasks (lepas)|📋 Tasks]]
 
----
-
 ## 📥 Captured (inbox)
-
-- baru lagi

@@ -1,0 +1,66 @@
+# ==============================================================================
+# PROFESSIONAL OBSIDIAN TEMPLATE GITIGNORE
+# Dirancang untuk komersialisasi template Obsidian PARA.
+# Menjaga struktur folder & sistem dashboard tetap utuh, mengabaikan data pribadi.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Berkas Sistem & Sync (Syncthing/OS)
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+.stfolder/
+.syncthing*/
+.stversions/
+
+# ------------------------------------------------------------------------------
+# Cache & Riwayat Tampilan Obsidian (Penting!)
+# ------------------------------------------------------------------------------
+# Mengabaikan posisi kursor, tab terbuka, dan status sidebar pribadi Anda
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/backups/
+.obsidian/cache/
+.trash/
+
+# Mengabaikan indeks pencarian plugin yang berukuran besar
+.obsidian/plugins/omnisearch/
+
+# ------------------------------------------------------------------------------
+# Konten & Catatan Pribadi (PARA Folders)
+# Mengabaikan semua catatan pribadi Anda, tetapi menjaga folder agar tidak hilang
+# ------------------------------------------------------------------------------
+/01 - Areas/**/*
+/02 - Projects/**/*
+/03 - Resources/**/*
+/04 - Journal/**/*
+/05 - Archive/**/*
+/06 - Habits/**/*
+/07 - Attachments/**/*
+
+# Jangan abaikan berkas .gitkeep (digunakan agar Git melacak folder kosong)
+!**/ .gitkeep
+!**/.gitkeep
+
+# ------------------------------------------------------------------------------
+# Pengaturan Vault yang Wajib Ikut (Agar Pembeli Langsung Siap Pakai)
+# ------------------------------------------------------------------------------
+!.obsidian/
+!.obsidian/plugins/
+!.obsidian/snippets/
+!.obsidian/themes/
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/community-plugins.json
+!.obsidian/core-plugins.json
+!.obsidian/hotkeys.json
+
+# ------------------------------------------------------------------------------
+# Dashboard & Berkas Template Utama (Wajib Ikut)
+# ------------------------------------------------------------------------------
+!/00 - Home/
+!/00 - Home/*.md
+!/99 - Templates/
+!/99 - Templates/**/*

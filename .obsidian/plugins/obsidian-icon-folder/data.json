@@ -6,10 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "LiFlower2",
-      "RiSeedlingLine",
-      "LiBookTemplate",
-      "LiCircleDashed"
+      "LiLock",
+      "LiCalendarDays",
+      "LiNotebookText",
+      "LiFileCode",
+      "LiLayoutDashboard"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -41,5 +42,15 @@
   "05 - Archive": "LiArchive",
   "99 - Templates": "LiBookTemplate",
   "06 - Habits": "LiFlower2",
-  "07 - Attachments": "LiPaperclip"
+  "07 - Attachments": "LiPaperclip",
+  "01 - Areas/Career.md": "LiHandbag",
+  "01 - Areas/Finance.md": "LiBadgeDollarSign",
+  "01 - Areas/Health.md": "LiHeartPulse",
+  "01 - Areas/Learn.md": "LiNotebookPen",
+  "01 - Areas/Self-dev.md": "LiUserRoundPlus",
+  "00 - Home/Overview.md": "LiLayoutDashboard",
+  "00 - Home/Projects Dashboard.md": "LiFileCode",
+  "00 - Home/Tasks (lepas).md": "LiNotebookText",
+  "00 - Home/Today.md": "LiCalendarDays",
+  "99 - Templates/scripts": "LiLock"
 }

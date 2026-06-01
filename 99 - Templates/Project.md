@@ -56,7 +56,15 @@ createButton("📥 Archive Project", "quickadd:choice:archive-active-note");
 
 ## Tasks
 
-- [ ] 
+```tasks
+path includes {{query.file.path}}
+hide backlink
+hide toolbar
+```
+
+> [!note]- Task Source
+> Task markdown disimpan di sini agar tombol edit dari plugin Tasks tetap bisa bekerja.
+>
 
 ## Notes
 

@@ -2,10 +2,10 @@
 /*  Hapus gap kiri‑kanan pada semua tampilan markdown di Obsidian  */
 /* ============================================================= */
 
-/* Preview (read‑only) */
+/* Preview (read‑only) - Berikan padding yang nyaman agar tidak menempel ke tepi */
 .markdown-preview-view {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
 /* Editor (live edit) */
@@ -14,15 +14,19 @@
   padding-right: 0 !important;
 }
 
-/* Jika kamu menggunakan pane‑pane (sidebar, split view) */
-.workspace-leaf-content {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* Optional: hanya berlaku bila kamu menambahkan class khusus ke file */
+/* Optional: hanya berlaku bila kamu menambahkan class khusus ke file (untuk benar-benar tanpa gap) */
 .no-side-gap .markdown-preview-view,
 .no-side-gap .cm-s-obsidian .CodeMirror-lines {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+/* ============================================================= */
+/*  Sembunyikan Kode Mentah (Backticks/Source) di Live Preview     */
+/*  Hanya muncul jika kursor Anda berada di dalam blok kode       */
+/* ============================================================= */
+.is-live-preview .HyperMD-codeblock:not(.cm-active),
+.is-live-preview .HyperMD-codeblock-begin:not(.cm-active),
+.is-live-preview .HyperMD-codeblock-end:not(.cm-active) {
+  display: none !important;
 }
