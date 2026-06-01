@@ -1,0 +1,10 @@
+{
+  "cssTheme": "GitHub Theme",
+  "interfaceFontFamily": "JetBrains Mono,Creato Display",
+  "monospaceFontFamily": "JetBrains Mono",
+  "theme": "obsidian",
+  "textFontFamily": "JetBrains Mono",
+  "enabledCssSnippets": [
+    "no-side-padding"
+  ]
+}

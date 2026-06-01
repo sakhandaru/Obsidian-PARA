@@ -1,0 +1,22 @@
+{
+  "promptDelete": false,
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "showFrontmatter": false,
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "legacyEditor": false,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showLineNumber": false,
+  "spellcheck": false,
+  "useTab": false,
+  "tabSize": 2,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00 - Home",
+  "attachmentFolderPath": "00 - Attachments",
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "showUnsupportedFiles": false
+}

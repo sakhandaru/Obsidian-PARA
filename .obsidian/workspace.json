@@ -1,0 +1,219 @@
+{
+  "main": {
+    "id": "008e5701e4a4047d",
+    "type": "split",
+    "children": [
+      {
+        "id": "7b7981c2c9644d6e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1ca901d2660bbc0f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 - Home/Today.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Today"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4ef8eec68a6fe133",
+    "type": "split",
+    "children": [
+      {
+        "id": "662e01419ce67d48",
+        "type": "tabs",
+        "dimension": 58.241758241758255,
+        "children": [
+          {
+            "id": "c28f598f14b025c3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5331997ab9ca5e45",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "[\"TQ_show_recurrence_rule\"]",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5d367586b3ca66b3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      },
+      {
+        "id": "4231153c0cc3353d",
+        "type": "tabs",
+        "dimension": 41.758241758241745,
+        "children": [
+          {
+            "id": "dc0efaaaa339e69f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8399fa147a1eef99",
+    "type": "split",
+    "children": [
+      {
+        "id": "fca1a0994dbcfaa4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c26b8313ab290f7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "06 - Habits/minum air.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for minum air"
+            }
+          },
+          {
+            "id": "a03c93f4b09b908d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "44f6858cc5a3647c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "00 - Home/Today.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Today"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 364.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "quickadd:QuickAdd": false,
+      "terminal:Open terminal": false,
+      "omnisearch:Omnisearch": false
+    }
+  },
+  "active": "c28f598f14b025c3",
+  "lastOpenFiles": [
+    "README.md",
+    "00 - Home/Tasks.md",
+    "00 - Home/Today.md",
+    "00 - Home/Projects Dashboard.md",
+    "00 - Home/Inbox.md",
+    "01 - Areas/karir karir.md",
+    "01 - Areas/akademik.md",
+    "01 - Areas/karir.md",
+    "01 - Areas/keluarga.md",
+    "01 - Areas/sekolah.md",
+    "06 - Habits/habit bagus.md",
+    "06 - Habits/olahraa.md",
+    "06 - Habits/minum air.md",
+    "06 - Habits/masak.md",
+    "06 - Habits/Info.md",
+    "02 - Projects/php.md",
+    "02 - Projects/project 2.md",
+    "05 - Archive/coding.md",
+    "99 - Templates/Project.md",
+    "99 - Templates/Habit.md",
+    "99 - Templates/Journal.md",
+    "99 - Templates/Area.md",
+    "02 - Projects/makan sehat.md",
+    "99 - Templates/scripts/archive-note.js",
+    "02 - Projects/project pertama.md",
+    "06 - Habits/baca.md",
+    "99 - Templates/scripts/new-resource.js",
+    "99 - Templates/scripts/new-project.js",
+    "04 - Journal/2026-06-01.md",
+    "06 - Habits",
+    "06 - Habits",
+    "99 - Templates/scripts/new-habit.js",
+    "99 - Templates/scripts/repeat-task.js",
+    "99 - Templates/scripts/project-task.js",
+    "Untitled.canvas",
+    "99 - Templates/scripts/nlp-task.js",
+    "99 - Templates/scripts",
+    "Untitled 1.canvas",
+    "Untitled 2.canvas"
+  ]
+}

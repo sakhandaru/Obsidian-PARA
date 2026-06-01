@@ -1,0 +1,28 @@
+/* ============================================================= */
+/*  Hapus gap kiri‑kanan pada semua tampilan markdown di Obsidian  */
+/* ============================================================= */
+
+/* Preview (read‑only) */
+.markdown-preview-view {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Editor (live edit) */
+.cm-s-obsidian .CodeMirror-lines {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Jika kamu menggunakan pane‑pane (sidebar, split view) */
+.workspace-leaf-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Optional: hanya berlaku bila kamu menambahkan class khusus ke file */
+.no-side-gap .markdown-preview-view,
+.no-side-gap .cm-s-obsidian .CodeMirror-lines {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

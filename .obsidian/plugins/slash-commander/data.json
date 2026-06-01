@@ -1,0 +1,214 @@
+{
+  "version": 2,
+  "confirmDeletion": true,
+  "showDescriptions": true,
+  "showSourcesForDuplicates": true,
+  "debug": false,
+  "mainTrigger": "//",
+  "extraTriggers": [],
+  "useExtraTriggers": false,
+  "triggerOnlyOnNewLine": false,
+  "queryPattern": {},
+  "bindings": [
+    {
+      "name": "Heading 1",
+      "id": "editor:set-heading-1",
+      "action": "editor:set-heading-1",
+      "icon": "heading-1",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Heading 2",
+      "id": "editor:set-heading-2",
+      "action": "editor:set-heading-2",
+      "icon": "heading-2",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Heading 3",
+      "id": "editor:set-heading-3",
+      "action": "editor:set-heading-3",
+      "icon": "heading-3",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Bullet List",
+      "id": "editor:toggle-bullet-list",
+      "action": "editor:toggle-bullet-list",
+      "icon": "list",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Numbered List",
+      "id": "editor:toggle-numbered-list",
+      "action": "editor:toggle-numbered-list",
+      "icon": "list-ordered",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Checklist",
+      "id": "editor:toggle-checklist-status",
+      "action": "editor:toggle-checklist-status",
+      "icon": "check-square",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Bold",
+      "id": "editor:toggle-bold",
+      "action": "editor:toggle-bold",
+      "icon": "bold",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Italic",
+      "id": "editor:toggle-italics",
+      "action": "editor:toggle-italics",
+      "icon": "italic",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Highlight",
+      "id": "editor:toggle-highlight",
+      "action": "editor:toggle-highlight",
+      "icon": "highlighter",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Quote",
+      "id": "editor:toggle-blockquote",
+      "action": "editor:toggle-blockquote",
+      "icon": "quote",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Divider",
+      "id": "editor:insert-horizontal-rule",
+      "action": "editor:insert-horizontal-rule",
+      "icon": "minus",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Table",
+      "id": "editor:insert-table",
+      "action": "editor:insert-table",
+      "icon": "table-2",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Callout",
+      "id": "editor:insert-callout",
+      "action": "editor:insert-callout",
+      "icon": "message-square",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Toggle",
+      "id": "editor:insert-toggle",
+      "action": "editor:insert-toggle",
+      "icon": "chevron-right",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Code Block",
+      "id": "editor:insert-codeblock",
+      "action": "editor:insert-codeblock",
+      "icon": "code",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Math Block",
+      "id": "editor:insert-mathblock",
+      "action": "editor:insert-mathblock",
+      "icon": "sigma",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Embed Note",
+      "id": "editor:insert-embed",
+      "action": "editor:insert-embed",
+      "icon": "file-symlink",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Link",
+      "id": "editor:insert-link",
+      "action": "editor:insert-link",
+      "icon": "link",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Attachment",
+      "id": "editor:attach-file",
+      "action": "editor:attach-file",
+      "icon": "paperclip",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Draw",
+      "id": "tldraw:new-tldraw-file",
+      "action": "tldraw:new-tldraw-file",
+      "icon": "pencil",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Template",
+      "id": "templater-obsidian:insert-templater",
+      "action": "templater-obsidian:insert-templater",
+      "icon": "layout-template",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "New Task",
+      "id": "quickadd:choice:capture-task",
+      "action": "quickadd:choice:capture-task",
+      "icon": "circle-check",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "New Project",
+      "id": "quickadd:choice:new-project",
+      "action": "quickadd:choice:new-project",
+      "icon": "folder-plus",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "Capture Inbox",
+      "id": "quickadd:choice:capture-inbox",
+      "action": "quickadd:choice:capture-inbox",
+      "icon": "inbox",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    },
+    {
+      "name": "New Journal",
+      "id": "quickadd:choice:new-journal",
+      "action": "quickadd:choice:new-journal",
+      "icon": "book-open",
+      "mode": "any",
+      "triggerMode": "anywhere"
+    }
+  ]
+}

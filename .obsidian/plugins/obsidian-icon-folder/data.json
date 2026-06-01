@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiFlower2",
+      "RiSeedlingLine",
+      "LiBookTemplate",
+      "LiCircleDashed"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": false,
+    "iconInFrontmatterEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false
+  },
+  "00 - Home": "LiHouse",
+  "01 - Areas": "LiLayoutGrid",
+  "02 - Projects": "LiFolderCode",
+  "03 - Resources": "LiLibrary",
+  "04 - Journal": "LiNotebook",
+  "05 - Archive": "LiArchive",
+  "00 - Attachments": "LiPaperclip",
+  "99 - Templates": "LiBookTemplate",
+  "06 - Habits": "LiFlower2"
+}
