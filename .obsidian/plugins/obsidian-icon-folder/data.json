@@ -39,7 +39,7 @@
   "03 - Resources": "LiLibrary",
   "04 - Journal": "LiNotebook",
   "05 - Archive": "LiArchive",
-  "00 - Attachments": "LiPaperclip",
   "99 - Templates": "LiBookTemplate",
-  "06 - Habits": "LiFlower2"
+  "06 - Habits": "LiFlower2",
+  "07 - Attachments": "LiPaperclip"
 }

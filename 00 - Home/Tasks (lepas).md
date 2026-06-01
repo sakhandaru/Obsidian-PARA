@@ -1,5 +1,5 @@
-> Tulis apapun di sini dulu. Jangan pikir struktur saat capture.
-> Proses saat review: jadikan task, project, resource, atau hapus.
+> Task lepas — tidak milik project manapun.
+> Tambah due date dengan 📅 YYYY-MM-DD untuk muncul di Today.
 
 ```dataviewjs
 const style = "background-color: var(--background-modifier-border); color: var(--text-normal); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 500; font-size: 0.9em; cursor: pointer; transition: background-color 0.2s ease, transform 0.1s ease; outline: none;";
@@ -22,14 +22,16 @@ const createButton = (label, commandId, activeStyle = "") => {
 
 createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
-createButton("📌 Project Task", "quickadd:choice:new-project-task");
-createButton("📥 Capture Inbox", "quickadd:choice:capture-inbox");
-createButton("🗂️ New Project", "quickadd:choice:new-project");
-createButton("🆕 New Habit", "quickadd:choice:new-habit");
-createButton("🗺️ New Area", "quickadd:choice:new-area");
-createButton("📚 New Resource", "quickadd:choice:new-resource");
-createButton("📔 New Journal", "quickadd:choice:new-journal");
 ```
 
-[[Today]]
-[[Tasks]]
+## Active
+- [x] bobo malam 📅 2026-06-01
+- [x] bobo malam 🔺
+- [x] belajar python 🔺 📅 2026-06-01
+
+
+---
+
+## Done
+
+> Pindahkan tugas yang sudah selesai ke bagian ini agar folder Active tetap bersih. Anda juga bisa menggunakan plugin komunitas seperti *Archiver* untuk otomatisasi.

@@ -4,24 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "7b7981c2c9644d6e",
+        "id": "9713d2ddbd72aaa1",
         "type": "tabs",
         "children": [
           {
-            "id": "1ca901d2660bbc0f",
+            "id": "0517d8ef6cc07ce1",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "c6c3c5ac6b623add",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - Home/Today.md",
+                "file": "06 - Habits/pemno.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Today"
+              "title": "pemno"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -96,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 336.50312423706055
   },
   "right": {
     "id": "8399fa147a1eef99",
@@ -153,34 +164,57 @@
               "icon": "lucide-list",
               "title": "Outline of Today"
             }
+          },
+          {
+            "id": "c58112de5b40da95",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 - Home/Overview.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Overview"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 364.5
+    "width": 479.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "quickadd:QuickAdd": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
-      "quickadd:QuickAdd": false,
       "terminal:Open terminal": false,
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c28f598f14b025c3",
+  "active": "c58112de5b40da95",
   "lastOpenFiles": [
-    "README.md",
-    "00 - Home/Tasks.md",
+    "06 - Habits/pemno.md",
+    "06 - Habits/Info.md",
+    "99 - Templates/Area.md",
+    "99 - Templates/Habit.md",
+    "00 - Home/Overview.md",
+    "99 - Templates/Journal.md",
+    "99 - Templates/Resource.md",
+    "99 - Templates/Project.md",
     "00 - Home/Today.md",
+    "00 - Home/Tasks (lepas).md",
     "00 - Home/Projects Dashboard.md",
     "00 - Home/Inbox.md",
+    "00 - Home/Productivity.md",
+    "README.md",
     "01 - Areas/karir karir.md",
     "01 - Areas/akademik.md",
     "01 - Areas/karir.md",
@@ -190,21 +224,12 @@
     "06 - Habits/olahraa.md",
     "06 - Habits/minum air.md",
     "06 - Habits/masak.md",
-    "06 - Habits/Info.md",
     "02 - Projects/php.md",
     "02 - Projects/project 2.md",
     "05 - Archive/coding.md",
-    "99 - Templates/Project.md",
-    "99 - Templates/Habit.md",
-    "99 - Templates/Journal.md",
-    "99 - Templates/Area.md",
-    "02 - Projects/makan sehat.md",
     "99 - Templates/scripts/archive-note.js",
-    "02 - Projects/project pertama.md",
-    "06 - Habits/baca.md",
     "99 - Templates/scripts/new-resource.js",
     "99 - Templates/scripts/new-project.js",
-    "04 - Journal/2026-06-01.md",
     "06 - Habits",
     "06 - Habits",
     "99 - Templates/scripts/new-habit.js",

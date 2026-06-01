@@ -2,17 +2,17 @@
   "choices": [
     {
       "id": "capture-inbox",
-      "name": "📥 Capture → Inbox",
+      "name": "📥 New Capture (Inbox)",
       "type": "Capture",
       "command": true,
       "captureToActiveFile": false,
-      "captureTo": "00 - Home/Inbox.md",
+      "captureTo": "00 - Home/Overview.md",
       "format": {
         "enabled": true,
         "format": "\n- {{VALUE}}"
       },
       "prepend": false,
-      "writeToBottomOfFile": true,
+      "writeToBottomOfFile": false,
       "appendLink": false,
       "task": false,
       "fileOpening": {
@@ -29,8 +29,8 @@
       },
       "activeFileWritePosition": "cursor",
       "insertAfter": {
-        "enabled": false,
-        "after": "",
+        "enabled": true,
+        "after": "## 📥 Captured",
         "insertAtEnd": true,
         "considerSubItems": false
       }

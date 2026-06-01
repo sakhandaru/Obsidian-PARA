@@ -1,5 +1,11 @@
-> Task lepas — tidak milik project manapun.
-> Tambah due date dengan 📅 YYYY-MM-DD untuk muncul di Today.
+---
+type: habit
+frequency: every day
+created: 2026-06-01
+tags:
+---
+
+# 🧘 Habit: pemno
 
 ```dataviewjs
 const style = "background-color: var(--background-modifier-border); color: var(--text-normal); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 500; font-size: 0.9em; cursor: pointer; transition: background-color 0.2s ease, transform 0.1s ease; outline: none;";
@@ -20,15 +26,41 @@ const createButton = (label, commandId, activeStyle = "") => {
     container.appendChild(btn);
 };
 
-createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
-createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
+createButton("📥 Archive Habit", "quickadd:choice:archive-active-note", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 ```
 
-## Active
 
+> Frekuensi: every day
+> Dilacak otomatis menggunakan tugas selesai di bawah.
 
----
+```contributionGraph
+title: pemno
+graphType: default
+dateRangeValue: 365
+dateRangeType: LATEST_DAYS
+startOfWeek: 0
+showCellRuleIndicators: true
+titleStyle:
+  textAlign: left
+  fontSize: 15px
+  fontWeight: normal
+dataSource:
+  type: TASK_IN_SPECIFIC_PAGE
+  value: '"06 - Habits/pemno.md"'
+  dateField: {}
+  filters:
+    - id: "${Date.now().toString()}"
+      type: STATUS_IS
+      value: COMPLETED
+fillTheScreen: false
+enableMainContainerShadow: false
+cellStyleRules: []
+```
 
-## Done
+## Tasks
 
-> Pindahkan tugas yang sudah selesai ke bagian ini agar folder Active tetap bersih. Anda juga bisa menggunakan plugin komunitas seperti *Archiver* untuk otomatisasi.
+- [x] 🌱 pemno 🔁 every day 📅 2026-06-01
+
+## Notes
+
+- 

@@ -19,7 +19,7 @@
   "outline": true,
   "word-count": false,
   "file-recovery": true,
-  "sync": true,
+  "sync": false,
   "bases": false,
   "footnotes": false,
   "markdown-importer": false,
