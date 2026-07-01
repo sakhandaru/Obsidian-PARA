@@ -1,4 +1,6 @@
 {
+  "terminal:close-terminal": [],
+  "terminal:find-in-terminal": [],
   "daily-notes:goto-today": [
     {
       "modifiers": [
@@ -14,15 +16,6 @@
         "Mod"
       ],
       "key": "O"
-    }
-  ],
-  "global-search:open": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "F"
     }
   ],
   "editor:toggle-bold": [
@@ -74,15 +67,6 @@
       "key": "I"
     }
   ],
-  "quickadd:choice:capture-task": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "T"
-    }
-  ],
   "command-palette:open": [
     {
       "modifiers": [
@@ -91,13 +75,21 @@
       "key": "."
     }
   ],
+  "quickadd:choice:go-home": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "H"
+    }
+  ],
   "omnisearch:show-modal": [
     {
       "modifiers": [
-        "Mod",
-        "Shift"
+        "Alt",
+        "Ctrl"
       ],
-      "key": "O"
+      "key": "F"
     }
   ]
 }

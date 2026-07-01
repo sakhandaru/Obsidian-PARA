@@ -4,11 +4,12 @@
   "obsidian-icon-folder",
   "omnisearch",
   "url-into-selection",
-  "actions-uri",
-  "terminal",
   "quickadd",
   "slash-commander",
   "auto-note-mover",
   "contribution-graph",
-  "obsidian-tasks-plugin"
+  "obsidian-tasks-plugin",
+  "terminal",
+  "obsidian-excalidraw-plugin",
+  "obsidian-style-settings"
 ]

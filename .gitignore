@@ -64,3 +64,12 @@ Thumbs.db
 !/00 - Home/*.md
 !/99 - Templates/
 !/99 - Templates/**/*
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
+
+# Google Calendar Integration Config
+gcal_config.json

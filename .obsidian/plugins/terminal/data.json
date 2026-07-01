@@ -283,7 +283,7 @@
       "useWin32Conhost": true
     }
   },
-  "defaultProfile": null,
+  "defaultProfile": "darwinIntegratedDefault",
   "terminalOptions": {
     "fontFamily": "MesloLGS NF",
     "fontSize": 12,

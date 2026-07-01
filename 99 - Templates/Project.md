@@ -56,10 +56,17 @@ createButton("📥 Archive Project", "quickadd:choice:archive-active-note");
 
 ## Tasks
 
-```tasks
-path includes {{query.file.path}}
-hide backlink
-hide toolbar
+```dataview
+TASK
+WHERE !completed AND file.path = this.file.path
+```
+
+### ✅ Completed Tasks
+
+```dataview
+TASK
+WHERE completed AND file.path = this.file.path
+SORT completion DESC
 ```
 
 > [!note]- Task Source

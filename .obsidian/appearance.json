@@ -1,10 +1,13 @@
 {
   "cssTheme": "Things 3",
-  "interfaceFontFamily": "JetBrains Mono,Creato Display",
+  "interfaceFontFamily": "JetBrains Mono,Space Mono,Creato Display",
   "monospaceFontFamily": "JetBrains Mono",
-  "theme": "obsidian",
-  "textFontFamily": "JetBrains Mono",
+  "theme": "moonstone",
+  "textFontFamily": "JetBrains Mono,Creato Display,Space Mono",
   "enabledCssSnippets": [
     "no-side-padding"
-  ]
+  ],
+  "translucency": false,
+  "baseFontSize": 16,
+  "baseFontSizeAction": true
 }

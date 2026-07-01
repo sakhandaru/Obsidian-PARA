@@ -293,6 +293,13 @@ createButton("📚 New Resource", "quickadd:choice:new-resource");
 createButton("📔 New Journal", "quickadd:choice:new-journal");
 ```
 
-[[Today|⬅️ Today]] | [[Tasks (lepas)|📋 Tasks]]
+[[Today|⬅️ Today]] | [[Tasks (lepas)|📋 Tasks]] | [[Inbox|📥 Inbox]]
 
-## 📥 Captured (inbox)
+---
+## Menu
+[[Career]]
+[[Finance]]
+[[Health]]
+[[Learn]]
+[[Self-dev]]
+[[Projects Dashboard]]

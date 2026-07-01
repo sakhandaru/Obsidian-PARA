@@ -1,15 +1,15 @@
-
 ```dataviewjs
-const style = "background-color: var(--background-modifier-border); color: var(--text-normal); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-color); font-weight: 500; font-size: 0.8em; cursor: pointer; transition: background-color 0.2s ease, transform 0.1s ease; outline: none;";
-
 const container = dv.el("div", "", {
-    attr: { style: "display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;" }
+    cls: "dashboard-btn-container"
 });
 
 const createButton = (label, action, activeStyle = "") => {
     const btn = document.createElement("button");
     btn.innerText = label;
-    btn.style = style + activeStyle;
+    btn.className = "dashboard-btn";
+    if (activeStyle) {
+        btn.style = activeStyle;
+    }
     btn.addEventListener("click", () => {
         if (typeof action === "string") {
             app.commands.executeCommandById(action);
@@ -24,54 +24,54 @@ const createButton = (label, action, activeStyle = "") => {
 
 createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
+createButton("📥 Inbox", () => {
+    const file = app.vault.getAbstractFileByPath("00 - Home/Inbox.md");
+    if (file) app.workspace.getLeaf().openFile(file);
+});
 createButton("📈 Overview", () => {
     const file = app.vault.getAbstractFileByPath("00 - Home/Overview.md");
     if (file) app.workspace.getLeaf().openFile(file);
 });
+createButton("📋 Tasks", () => {
+    const file = app.vault.getAbstractFileByPath("00 - Home/Tasks (lepas).md");
+    if (file) app.workspace.getLeaf().openFile(file);
+});
 ```
-
-## 📋 Due Today
-```tasks
-due today
-not done
-path does not include 06 - Habits
-hide backlink
-hide toolbar
+## 📋 Due Today & Overdue
+```dataview
+TASK
+WHERE !completed AND due <= date("today") AND !contains(file.path, "06 - Habits") AND !contains(file.path, "99 - Templates")
+SORT due ASC
 ```
 
 ---
 
 ## 🧘 Habits Today
-```tasks
-path includes 06 - Habits
-due today
-not done
-hide backlink
-hide recurrence rule
-hide toolbar
+```dataview
+TASK
+WHERE !completed AND contains(file.path, "06 - Habits") AND due <= date("today")
 ```
 
 ---
 
 ## 📅 Due Tomorrow
-```tasks
-due tomorrow
-not done
-path does not include 06 - Habits
-hide backlink
-hide toolbar
+```dataview
+TASK
+WHERE !completed AND due = date("tomorrow") AND !contains(file.path, "06 - Habits") AND !contains(file.path, "99 - Templates")
 ```
 
 ---
 
 ## 📥 Undated Tasks
-```tasks
-no due date
-not done
-path does not include 06 - Habits
-path does not include 99 - Templates
-hide backlink
-hide toolbar
+```dataview
+TASK
+WHERE !completed AND !due AND !contains(file.path, "06 - Habits") AND !contains(file.path, "99 - Templates")
 ```
 
 ---
+
+## ✅ Completed Today
+```dataview
+TASK
+WHERE completed AND completion = date("today") AND !contains(file.path, "99 - Templates")
+```

@@ -14,10 +14,11 @@
   "tabSize": 4,
   "newFileLocation": "folder",
   "newFileFolderPath": "03 - Resources",
-  "attachmentFolderPath": "00 - Attachments",
+  "attachmentFolderPath": "07 - Attachments",
   "alwaysUpdateLinks": true,
   "newLinkFormat": "shortest",
   "useMarkdownLinks": false,
   "showUnsupportedFiles": false,
-  "mobilePullAction": "quickadd:choice:go-home"
+  "mobilePullAction": "quickadd:choice:go-home",
+  "showInlineTitle": true
 }

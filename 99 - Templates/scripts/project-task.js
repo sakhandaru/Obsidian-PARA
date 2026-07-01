@@ -145,10 +145,17 @@ module.exports = async (params) => {
         const tasksView = [
             tasksHeader,
             "",
-            "```tasks",
-            "path includes {{query.file.path}}",
-            "hide backlink",
-            "hide toolbar",
+            "```dataview",
+            "TASK",
+            "WHERE !completed AND file.path = this.file.path",
+            "```",
+            "",
+            "### ✅ Completed Tasks",
+            "",
+            "```dataview",
+            "TASK",
+            "WHERE completed AND file.path = this.file.path",
+            "SORT completion DESC",
             "```",
             "",
             taskSourceHeader,
@@ -175,7 +182,7 @@ module.exports = async (params) => {
             const sourceLines = existingTasks
                 .split("\n")
                 .map(line => line.trimEnd())
-                .filter(line => line.length > 0 && !line.startsWith("```") && !line.startsWith("path includes") && !line.startsWith("hide backlink") && !line.startsWith("hide toolbar"))
+                .filter(line => line.length > 0 && !line.startsWith("```") && !line.startsWith("#") && !line.startsWith("TASK") && !line.startsWith("WHERE ") && !line.startsWith("path ") && !line.startsWith("hide "))
                 .map(line => line.startsWith(">") ? line : `> ${line}`);
             const sourceBlock = sourceLines.length > 0 ? `${tasksView}\n${sourceLines.join("\n")}\n` : `${tasksView}\n`;
 
