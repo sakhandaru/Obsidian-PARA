@@ -53,14 +53,6 @@ SORT due ASC
 
 ---
 
-## 🗂️ Project Tasks (Tugas Proyek)
-```dataview
-TASK
-WHERE !completed AND contains(file.path, "02 - Projects") AND !contains(file.path, "99 - Templates")
-GROUP BY file.link
-```
-
----
 
 ## 🗃️ Task Source
 
