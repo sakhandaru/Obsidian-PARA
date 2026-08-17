@@ -38,76 +38,81 @@ const createButton = (label, action, activeStyle = "") => {
 };
 
 const handleNewProjectNote = async () => {
-    const activeFile = app.workspace.getActiveFile();
-    let defaultProj = "";
-    if (activeFile && activeFile.path.startsWith("02 - Projects/")) {
-        defaultProj = activeFile.basename;
-    }
+    try {
+        const activeFile = app.workspace.getActiveFile();
+        let defaultProj = "";
+        if (activeFile && activeFile.path.startsWith("02 - Projects/")) {
+            defaultProj = activeFile.basename;
+        }
 
-    const projFiles = app.vault.getMarkdownFiles().filter(f => f.path.startsWith("02 - Projects/") && !f.path.includes("TunTask"));
-    const projList = projFiles.map(f => f.basename);
+        const projFiles = app.vault.getMarkdownFiles().filter(f => f.path.startsWith("02 - Projects/") && !f.path.includes("TunTask"));
+        const projList = projFiles.map(f => f.basename);
 
-    const { SuggestModal } = require("obsidian");
-    class ProjectSuggest extends SuggestModal {
-        constructor(app, items, onSelect) {
-            super(app);
-            this.items = items;
-            this.onSelect = onSelect;
-            this.setPlaceholder("Pilih Proyek...");
+        const { SuggestModal } = window.obsidian;
+        class ProjectSuggest extends SuggestModal {
+            constructor(app, items, onSelect) {
+                super(app);
+                this.items = items;
+                this.onSelect = onSelect;
+                this.setPlaceholder("Pilih Proyek...");
+            }
+            getSuggestions(query) {
+                return this.items.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+            }
+            renderSuggestion(value, el) {
+                el.createEl("div", { text: value });
+            }
+            onChooseSuggestion(item, evt) {
+                this.onSelect(item);
+            }
         }
-        getSuggestions(query) {
-            return this.items.filter(item => item.toLowerCase().includes(query.toLowerCase()));
-        }
-        renderSuggestion(value, el) {
-            el.createEl("div", { text: value });
-        }
-        onChooseSuggestion(item, evt) {
-            this.onSelect(item);
-        }
-    }
 
-    const runCreation = async (projName) => {
-        const noteName = prompt("Ketik Nama Catatan Baru:");
-        if (!noteName || !noteName.trim()) return;
-        
-        const cleanNoteName = noteName.trim();
-        const projFile = projFiles.find(f => f.basename === projName);
-        if (!projFile) return;
-        
-        const folderPath = "02 - Projects";
-        const noteFileName = `${folderPath}/${projName} - ${cleanNoteName}.md`;
-        
-        // 1. Create the note
-        let subNoteFile = app.vault.getAbstractFileByPath(noteFileName);
-        if (!subNoteFile) {
-            const dateStr = moment().format("YYYY-MM-DD");
-            const subNoteContent = `---\ntype: note\nproject: [[${projName}]]\ncreated: ${dateStr}\n---\n\n# ${projName} - ${cleanNoteName}\n\nTautan Induk: [[${projName}]]\n\n- `;
-            subNoteFile = await app.vault.create(noteFileName, subNoteContent);
-        }
-        
-        // 2. Insert outlink under ## Notes in the project note file
-        const projectContent = await app.vault.read(projFile);
-        const notesRegex = /(## Notes\s*?\n)(.*?)(\n##|$)/s;
-        let newProjectContent = projectContent;
-        
-        if (projectContent.match(notesRegex)) {
-            newProjectContent = projectContent.replace(notesRegex, `$1$2\n- [[${projName} - ${cleanNoteName}]]\n$3`);
+        const runCreation = async (projName) => {
+            const noteName = prompt("Ketik Nama Catatan Baru:");
+            if (!noteName || !noteName.trim()) return;
+            
+            const cleanNoteName = noteName.trim();
+            const projFile = projFiles.find(f => f.basename === projName);
+            if (!projFile) return;
+            
+            const folderPath = "02 - Projects";
+            const noteFileName = `${folderPath}/${projName} - ${cleanNoteName}.md`;
+            
+            // 1. Create the note
+            let subNoteFile = app.vault.getAbstractFileByPath(noteFileName);
+            if (!subNoteFile) {
+                const dateStr = moment().format("YYYY-MM-DD");
+                const subNoteContent = `---\ntype: note\nproject: [[${projName}]]\ncreated: ${dateStr}\n---\n\n# ${projName} - ${cleanNoteName}\n\nTautan Induk: [[${projName}]]\n\n- `;
+                subNoteFile = await app.vault.create(noteFileName, subNoteContent);
+            }
+            
+            // 2. Insert outlink under ## Notes in the project note file
+            const projectContent = await app.vault.read(projFile);
+            const notesRegex = /(## Notes\s*?\n)(.*?)(\n##|$)/s;
+            let newProjectContent = projectContent;
+            
+            if (projectContent.match(notesRegex)) {
+                newProjectContent = projectContent.replace(notesRegex, `$1$2\n- [[${projName} - ${cleanNoteName}]]\n$3`);
+            } else {
+                newProjectContent = projectContent + `\n\n## Notes\n\n- [[${projName} - ${cleanNoteName}]]`;
+            }
+            
+            await app.vault.modify(projFile, newProjectContent);
+            
+            // 3. Open the newly created note
+            if (subNoteFile) {
+                app.workspace.getLeaf().openFile(subNoteFile);
+            }
+        };
+
+        if (defaultProj) {
+            await runCreation(defaultProj);
         } else {
-            newProjectContent = projectContent + `\n\n## Notes\n\n- [[${projName} - ${cleanNoteName}]]`;
+            new ProjectSuggest(app, projList, runCreation).open();
         }
-        
-        await app.vault.modify(projFile, newProjectContent);
-        
-        // 3. Open the newly created note
-        if (subNoteFile) {
-            app.workspace.getLeaf().openFile(subNoteFile);
-        }
-    };
-
-    if (defaultProj) {
-        await runCreation(defaultProj);
-    } else {
-        new ProjectSuggest(app, projList, runCreation).open();
+    } catch (err) {
+        alert("Gagal membuat catatan baru: " + err.message);
+        console.error(err);
     }
 };
 
