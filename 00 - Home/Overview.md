@@ -284,6 +284,7 @@ const createButton = (label, commandId, activeStyle = "") => {
 
 createButton("📥 Capture Inbox", "quickadd:choice:capture-inbox", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("🗂️ New Project", "quickadd:choice:new-project");
+createButton("📝 New Project Note", "quickadd:choice:new-project-note");
 createButton("🗺️ New Area", "quickadd:choice:new-area");
 createButton("📚 New Resource", "quickadd:choice:new-resource");
 createButton("📔 New Journal", "quickadd:choice:new-journal");

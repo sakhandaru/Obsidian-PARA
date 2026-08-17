@@ -26,6 +26,7 @@ const createButton = (label, action, activeStyle = "") => {
 createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
 createButton("📥 Capture Inbox", "quickadd:choice:capture-inbox");
+createButton("📝 New Project Note", "quickadd:choice:new-project-note");
 createButton("📈 Overview", () => {
     const file = app.vault.getAbstractFileByPath("00 - Home/Overview.md");
     if (file) app.workspace.getLeaf().openFile(file);
