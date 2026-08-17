@@ -299,3 +299,4 @@ createButton("📔 New Journal", "quickadd:choice:new-journal");
 [[Learn]]
 [[Self-dev]]
 [[Projects Dashboard]]
+[[06 - Habits/Habits Dashboard|Habits Dashboard]]
