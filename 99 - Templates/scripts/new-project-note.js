@@ -34,7 +34,7 @@ module.exports = async (params) => {
     }
 
     const cleanNoteName = noteName.trim();
-    const folderPath = "02 - Projects";
+    const folderPath = "03 - Resources";
     const noteFileName = `${folderPath}/${selectedProjectName} - ${cleanNoteName}.md`;
 
     try {
