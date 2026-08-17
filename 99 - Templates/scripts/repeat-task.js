@@ -117,7 +117,7 @@ module.exports = async (params) => {
 
     try {
         let content = await app.vault.read(taskFile);
-        const activeHeader = "## 📥 Task Inbox";
+        const activeHeader = "## 🗃️ Task Source";
         const index = content.indexOf(activeHeader);
 
         if (index !== -1) {

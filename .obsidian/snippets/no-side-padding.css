@@ -21,12 +21,40 @@
   padding-right: 0 !important;
 }
 
+
+
 /* ============================================================= */
-/*  Sembunyikan Kode Mentah (Backticks/Source) di Live Preview     */
-/*  Hanya muncul jika kursor Anda berada di dalam blok kode       */
+/*  Navigasi Button Grid Responsif (Desktop: 4-in-row, Mobile: 2x2) */
 /* ============================================================= */
-.is-live-preview .HyperMD-codeblock:not(.cm-active),
-.is-live-preview .HyperMD-codeblock-begin:not(.cm-active),
-.is-live-preview .HyperMD-codeblock-end:not(.cm-active) {
-  display: none !important;
+.dashboard-btn-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.dashboard-btn {
+  flex: 1 1 auto;
+  min-width: fit-content;
+  text-align: center;
+  background-color: var(--background-modifier-border);
+  color: var(--text-normal);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .dashboard-btn {
+    flex: 1 1 calc(50% - 4px) !important;
+    font-size: 0.76em !important;
+    padding: 8px 6px !important;
+  }
 }

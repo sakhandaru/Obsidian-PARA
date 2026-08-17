@@ -46,7 +46,7 @@ titleStyle:
   fontWeight: normal
 dataSource:
   type: TASK_IN_SPECIFIC_PAGE
-  value: '"06 - Habits/<% tp.file.title %>.md"'
+  value: '"TunTask/habits.md"'
   dateField: {}
   filters:
     - id: "1780293636021"
@@ -64,4 +64,4 @@ cellStyleRules: []
 
 ## Notes
 
-- 
+- [[Habit]]

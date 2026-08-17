@@ -30,7 +30,7 @@ cellStyleRules: []
 const todayStr = moment().format("YYYY-MM-DD");
 
 // 1. Ambil data tugas
-const allTasks = dv.pages('!"99 - Templates"').file.tasks;
+const allTasks = dv.pages('"TunTask" or "00 - Home/Tasks (lepas).md"').file.tasks;
 
 // Helper untuk mengambil tanggal tugas secara konsisten
 const getTaskDate = (t) => {
@@ -282,17 +282,20 @@ const createButton = (label, commandId, activeStyle = "") => {
     container.appendChild(btn);
 };
 
-createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
-createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
-createButton("📌 Project Task", "quickadd:choice:new-project-task");
-createButton("📥 Capture Inbox", "quickadd:choice:capture-inbox");
+createButton("📥 Capture Inbox", "quickadd:choice:capture-inbox", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("🗂️ New Project", "quickadd:choice:new-project");
-createButton("🆕 New Habit", "quickadd:choice:new-habit");
 createButton("🗺️ New Area", "quickadd:choice:new-area");
 createButton("📚 New Resource", "quickadd:choice:new-resource");
 createButton("📔 New Journal", "quickadd:choice:new-journal");
 ```
 
-[[Today|⬅️ Today]] | [[Tasks (lepas)|📋 Tasks]]
+[[Today|⬅️ Today]] | [[Tasks (lepas)|📋 Tasks]] | [[Inbox|📥 Inbox]]
 
-## 📥 Captured (inbox)
+---
+## Menu
+[[Career]]
+[[Finance]]
+[[Health]]
+[[Learn]]
+[[Self-dev]]
+[[Projects Dashboard]]

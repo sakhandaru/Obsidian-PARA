@@ -6,7 +6,7 @@
       "type": "Capture",
       "command": true,
       "captureToActiveFile": false,
-      "captureTo": "00 - Home/Overview.md",
+      "captureTo": "00 - Home/Inbox.md",
       "format": {
         "enabled": true,
         "format": "\n- {{VALUE}}"
@@ -123,29 +123,20 @@
     {
       "id": "new-journal",
       "name": "📔 New Journal Entry",
-      "type": "Template",
+      "type": "Macro",
       "command": true,
-      "templatePath": "99 - Templates/Journal.md",
-      "folder": {
-        "enabled": true,
-        "folders": [
-          "04 - Journal"
-        ],
-        "chooseWhenCreatingNote": false,
-        "createInSameFolderAsActiveFile": false,
-        "chooseFromSubfolders": false
-      },
-      "fileNameFormat": {
-        "enabled": true,
-        "format": "{{DATE}}"
-      },
-      "appendLink": false,
-      "fileExistsBehavior": "Open existing",
-      "fileOpening": {
-        "location": "tab",
-        "direction": "vertical",
-        "mode": "default",
-        "focus": true
+      "macro": {
+        "id": "new-journal-macro",
+        "name": "New Journal Macro",
+        "commands": [
+          {
+            "id": "new-journal-script",
+            "name": "new-journal.js",
+            "type": "UserScript",
+            "path": "99 - Templates/scripts/new-journal.js",
+            "settings": {}
+          }
+        ]
       }
     },
     {
