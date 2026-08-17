@@ -63,18 +63,6 @@ GROUP BY file.link
 ---
 
 ## 🗃️ Task Source
-- [ ] bikin crud
-- [ ] mandi
-- [ ] beres² kamar
-- [ ] belajar woilah 📅 2026-06-07 🔺
-- [x] ada bl 📅 2026-06-08 ⏰ 19:00 [completion:: 2026-06-08]
-- [x] nemoni mas haris 📅 2026-06-06 [completion:: 2026-06-06]
-- [x] jam 9 cuci baju 📅 2026-06-06 [completion:: 2026-06-06]
-- [x] fix obsidian 📅 2026-06-05 [completion:: 2026-06-05]
-- [x] isi ulang galon 📅 2026-06-05 [completion:: 2026-06-05]
-- [x] beli sabun 📅 2026-06-05 [completion:: 2026-06-05]
-- [x] ketemu ellak 📅 2026-06-06 [completion:: 2026-06-08]
-- [x] laundry 📅 2026-06-05 🔺 [completion:: 2026-06-05]
 
 ---
 
