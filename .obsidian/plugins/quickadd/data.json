@@ -156,6 +156,24 @@
             "settings": {}
           }
         ]
+    },
+    {
+      "id": "new-project-note",
+      "name": "📝 New Project Note",
+      "type": "Macro",
+      "command": true,
+      "macro": {
+        "id": "project-note-macro",
+        "name": "Project Note Macro",
+        "commands": [
+          {
+            "id": "project-note-script",
+            "name": "new-project-note.js",
+            "type": "UserScript",
+            "path": "99 - Templates/scripts/new-project-note.js",
+            "settings": {}
+          }
+        ]
       }
     },
     {

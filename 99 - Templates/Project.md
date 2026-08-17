@@ -21,102 +21,19 @@ const container = dv.el("div", "", {
     attr: { style: "display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;" }
 });
 
-const createButton = (label, action, activeStyle = "") => {
+const createButton = (label, commandId, activeStyle = "") => {
     const btn = document.createElement("button");
     btn.innerText = label;
     btn.style = style + activeStyle;
     btn.addEventListener("click", () => {
-        if (typeof action === "function") {
-            action();
-            return;
-        }
-        app.commands.executeCommandById(action);
+        app.commands.executeCommandById(commandId);
     });
     btn.addEventListener("mousedown", () => btn.style.transform = "scale(0.95)");
     btn.addEventListener("mouseup", () => btn.style.transform = "scale(1)");
     container.appendChild(btn);
 };
 
-const handleNewProjectNote = async () => {
-    try {
-        const activeFile = app.workspace.getActiveFile();
-        let defaultProj = "";
-        if (activeFile && activeFile.path.startsWith("02 - Projects/")) {
-            defaultProj = activeFile.basename;
-        }
-
-        const projFiles = app.vault.getMarkdownFiles().filter(f => f.path.startsWith("02 - Projects/") && !f.path.includes("TunTask"));
-        const projList = projFiles.map(f => f.basename);
-
-        const { SuggestModal } = window.obsidian;
-        class ProjectSuggest extends SuggestModal {
-            constructor(app, items, onSelect) {
-                super(app);
-                this.items = items;
-                this.onSelect = onSelect;
-                this.setPlaceholder("Pilih Proyek...");
-            }
-            getSuggestions(query) {
-                return this.items.filter(item => item.toLowerCase().includes(query.toLowerCase()));
-            }
-            renderSuggestion(value, el) {
-                el.createEl("div", { text: value });
-            }
-            onChooseSuggestion(item, evt) {
-                this.onSelect(item);
-            }
-        }
-
-        const runCreation = async (projName) => {
-            const noteName = prompt("Ketik Nama Catatan Baru:");
-            if (!noteName || !noteName.trim()) return;
-            
-            const cleanNoteName = noteName.trim();
-            const projFile = projFiles.find(f => f.basename === projName);
-            if (!projFile) return;
-            
-            const folderPath = "02 - Projects";
-            const noteFileName = `${folderPath}/${projName} - ${cleanNoteName}.md`;
-            
-            // 1. Create the note
-            let subNoteFile = app.vault.getAbstractFileByPath(noteFileName);
-            if (!subNoteFile) {
-                const dateStr = moment().format("YYYY-MM-DD");
-                const subNoteContent = `---\ntype: note\nproject: [[${projName}]]\ncreated: ${dateStr}\n---\n\n# ${projName} - ${cleanNoteName}\n\nTautan Induk: [[${projName}]]\n\n- `;
-                subNoteFile = await app.vault.create(noteFileName, subNoteContent);
-            }
-            
-            // 2. Insert outlink under ## Notes in the project note file
-            const projectContent = await app.vault.read(projFile);
-            const notesRegex = /(## Notes\s*?\n)(.*?)(\n##|$)/s;
-            let newProjectContent = projectContent;
-            
-            if (projectContent.match(notesRegex)) {
-                newProjectContent = projectContent.replace(notesRegex, `$1$2\n- [[${projName} - ${cleanNoteName}]]\n$3`);
-            } else {
-                newProjectContent = projectContent + `\n\n## Notes\n\n- [[${projName} - ${cleanNoteName}]]`;
-            }
-            
-            await app.vault.modify(projFile, newProjectContent);
-            
-            // 3. Open the newly created note
-            if (subNoteFile) {
-                app.workspace.getLeaf().openFile(subNoteFile);
-            }
-        };
-
-        if (defaultProj) {
-            await runCreation(defaultProj);
-        } else {
-            new ProjectSuggest(app, projList, runCreation).open();
-        }
-    } catch (err) {
-        alert("Gagal membuat catatan baru: " + err.message);
-        console.error(err);
-    }
-};
-
-createButton("📝 New Project Note", handleNewProjectNote, "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
+createButton("📝 New Project Note", "quickadd:choice:new-project-note", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("📥 Archive Project", "quickadd:choice:archive-active-note");
 ```
 
