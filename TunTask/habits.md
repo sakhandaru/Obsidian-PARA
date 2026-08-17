@@ -1,11 +1,12 @@
 ---
 type: tuntask-data
-last_sync: 2026-08-17T16:39:27.420Z
+last_sync: 2026-08-17T17:08:24.524Z
 ---
 
 ## Habits
 
 ### Minum air
+- [ ] 🌱 Minum air 🔁 every day 📅 2026-08-18
 - [ ] 🌱 Minum air 🔁 every day 📅 2026-08-17
 - [ ] 🌱 Minum air 🔁 every day 📅 2026-08-16
 - [ ] 🌱 Minum air 🔁 every day 📅 2026-08-15
@@ -35,4 +36,3 @@ last_sync: 2026-08-17T16:39:27.420Z
 - [ ] 🌱 Minum air 🔁 every day 📅 2026-07-22
 - [ ] 🌱 Minum air 🔁 every day 📅 2026-07-21
 - [ ] 🌱 Minum air 🔁 every day 📅 2026-07-20
-- [ ] 🌱 Minum air 🔁 every day 📅 2026-07-19
