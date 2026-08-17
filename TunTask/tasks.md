@@ -1,9 +1,10 @@
 ---
 type: tuntask-data
-last_sync: 2026-08-17T18:32:45.892Z
+last_sync: 2026-08-17T18:34:01.441Z
 ---
 
 ## Active
+- [ ] ke poto terang 📅 2026-08-18 ⏰ 09:00 <!-- id: 8d3ba8bf-8bff-4cac-b069-8c2ab40683f8 -->
 
 ## Completed
 - [x] masak 📅 2026-08-17 [completion:: 2026-08-17] <!-- id: 19217f6e-e189-4e0b-ba1c-49fa14322bb4 -->
