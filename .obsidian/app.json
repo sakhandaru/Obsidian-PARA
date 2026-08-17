@@ -21,5 +21,10 @@
   "showUnsupportedFiles": false,
   "mobilePullAction": "quickadd:choice:go-home",
   "showInlineTitle": true,
-  "rightToLeft": false
+  "rightToLeft": false,
+  "userIgnoreFilters": [
+    "02 - Projects/TunTask/node_modules",
+    "02 - Projects/TunTask/dist",
+    "02 - Projects/TunTask/.git"
+  ]
 }
