@@ -7,7 +7,7 @@ type: dashboard
 Daftar semua proyek aktif beserta *progress bar* penyelesaian tugasnya.
 
 ```dataviewjs
-const pages = dv.pages('"02 - Projects"').filter(p => !p.file.path.includes("02 - Projects/TunTask"));
+const pages = dv.pages('"02 - Projects"');
 
 dv.table(["Proyek", "Area", "Tenggat", "Jumlah Catatan Terkait"], pages.map(p => {
     const outlinks = p.file.outlinks;
