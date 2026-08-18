@@ -35,25 +35,7 @@
         "considerSubItems": false
       }
     },
-    {
-      "id": "capture-task",
-      "name": "✅ New Task (lepas)",
-      "type": "Macro",
-      "command": true,
-      "macro": {
-        "id": "nlp-task-macro",
-        "name": "NLP Task Macro",
-        "commands": [
-          {
-            "id": "nlp-task-script",
-            "name": "nlp-task.js",
-            "type": "UserScript",
-            "path": "99 - Templates/scripts/nlp-task.js",
-            "settings": {}
-          }
-        ]
-      }
-    },
+
     {
       "id": "new-project",
       "name": "🗂️ New Project",
@@ -139,25 +121,7 @@
         ]
       }
     },
-    {
-      "id": "new-project-task",
-      "name": "📌 New Project Task",
-      "type": "Macro",
-      "command": true,
-      "macro": {
-        "id": "project-task-macro",
-        "name": "Project Task Macro",
-        "commands": [
-          {
-            "id": "project-task-script",
-            "name": "project-task.js",
-            "type": "UserScript",
-            "path": "99 - Templates/scripts/project-task.js",
-            "settings": {}
-          }
-        ]
-      }
-    },
+
     {
       "id": "new-project-note",
       "name": "📝 New Project Note",
@@ -177,44 +141,7 @@
         ]
       }
     },
-    {
-      "id": "new-recurring-task",
-      "name": "🔁 New Recurring Task",
-      "type": "Macro",
-      "command": true,
-      "macro": {
-        "id": "repeat-task-macro",
-        "name": "Repeat Task Macro",
-        "commands": [
-          {
-            "id": "repeat-task-script",
-            "name": "repeat-task.js",
-            "type": "UserScript",
-            "path": "99 - Templates/scripts/repeat-task.js",
-            "settings": {}
-          }
-        ]
-      }
-    },
-    {
-      "id": "new-habit",
-      "name": "🆕 New Habit",
-      "type": "Macro",
-      "command": true,
-      "macro": {
-        "id": "new-habit-macro",
-        "name": "New Habit Macro",
-        "commands": [
-          {
-            "id": "new-habit-script",
-            "name": "new-habit.js",
-            "type": "UserScript",
-            "path": "99 - Templates/scripts/new-habit.js",
-            "settings": {}
-          }
-        ]
-      }
-    },
+
     {
       "id": "archive-active-note",
       "name": "📥 Archive Active Note",

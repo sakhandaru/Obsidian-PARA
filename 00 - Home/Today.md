@@ -22,8 +22,6 @@ const createButton = (label, action, activeStyle = "") => {
     container.appendChild(btn);
 };
 
-createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
-createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
 createButton("📥 Inbox", () => {
     const file = app.vault.getAbstractFileByPath("00 - Home/Inbox.md");
     if (file) app.workspace.getLeaf().openFile(file);
@@ -32,46 +30,4 @@ createButton("📈 Overview", () => {
     const file = app.vault.getAbstractFileByPath("00 - Home/Overview.md");
     if (file) app.workspace.getLeaf().openFile(file);
 });
-createButton("📋 Tasks", () => {
-    const file = app.vault.getAbstractFileByPath("00 - Home/Tasks (lepas).md");
-    if (file) app.workspace.getLeaf().openFile(file);
-});
-```
-## 📋 Due Today & Overdue
-```dataview
-TASK
-WHERE !completed AND due <= date("today") AND (contains(file.path, "TunTask/tasks") OR contains(file.path, "00 - Home/Tasks (lepas)"))
-SORT due ASC
-```
-
----
-
-## 🧘 Habits Today
-```dataview
-TASK
-WHERE !completed AND contains(file.path, "TunTask/habits") AND due = date("today")
-```
-
----
-
-## 📅 Due Tomorrow
-```dataview
-TASK
-WHERE !completed AND due = date("tomorrow") AND (contains(file.path, "TunTask/tasks") OR contains(file.path, "00 - Home/Tasks (lepas)"))
-```
-
----
-
-## 📥 Undated Tasks
-```dataview
-TASK
-WHERE !completed AND !due AND (contains(file.path, "TunTask/tasks") OR contains(file.path, "00 - Home/Tasks (lepas)"))
-```
-
----
-
-## ✅ Completed Today
-```dataview
-TASK
-WHERE completed AND completion = date("today") AND (contains(file.path, "TunTask/tasks") OR contains(file.path, "TunTask/habits") OR contains(file.path, "00 - Home/Tasks (lepas)"))
 ```

@@ -23,9 +23,7 @@ const createButton = (label, action, activeStyle = "") => {
     container.appendChild(btn);
 };
 
-createButton("✅ New Task", "quickadd:choice:capture-task", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
-createButton("🔁 Recurring Task", "quickadd:choice:new-recurring-task");
-createButton("📥 Capture Inbox", "quickadd:choice:capture-inbox");
+createButton("📥 Capture Inbox", "quickadd:choice:capture-inbox", "background-color: var(--interactive-accent); color: var(--text-on-accent); border: none; font-weight: 600;");
 createButton("📝 New Project Note", "quickadd:choice:new-project-note");
 createButton("📈 Overview", () => {
     const file = app.vault.getAbstractFileByPath("00 - Home/Overview.md");
@@ -33,10 +31,6 @@ createButton("📈 Overview", () => {
 });
 createButton("🗓️ Today", async () => {
     await app.workspace.openLinkText("Today", "00 - Home", false);
-});
-createButton("📋 Tasks", () => {
-    const file = app.vault.getAbstractFileByPath("00 - Home/Tasks (lepas).md");
-    if (file) app.workspace.getLeaf().openFile(file);
 });
 ```
 
